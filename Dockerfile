@@ -4,10 +4,10 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
-COPY ["westudy_administration_webapi_csharp/westudy_administration_webapi_csharp.csproj", "westudy_administration_webapi_csharp/"]
-RUN dotnet restore "westudy_administration_webapi_csharp/westudy_administration_webapi_csharp.csproj"
+COPY ["westudy_administration_webapi_csharp.csproj", ""]
+RUN dotnet restore "/westudy_administration_webapi_csharp.csproj"
 COPY . .
-WORKDIR "/src/westudy_administration_webapi_csharp"
+WORKDIR "/src/"
 RUN dotnet build "westudy_administration_webapi_csharp.csproj" -c Release -o /app
 
 FROM build AS publish

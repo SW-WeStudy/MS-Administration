@@ -12888,11 +12888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MEGAsync\\UNAL\\11vo Semestre\\Arquitectura de Software\\WeStudy\\westudy_administration_webapi_csharp\\westudy_administration_webapi_csharp\\westudy_administration_webapi_csharp.csproj",
+      "projectUniqueName": "D:\\MEGAsync\\UNAL\\11vo Semestre\\Arquitectura de Software\\WeStudy\\MS-Administration\\westudy_administration_webapi_csharp.csproj",
       "projectName": "westudy_administration_webapi_csharp",
-      "projectPath": "D:\\MEGAsync\\UNAL\\11vo Semestre\\Arquitectura de Software\\WeStudy\\westudy_administration_webapi_csharp\\westudy_administration_webapi_csharp\\westudy_administration_webapi_csharp.csproj",
+      "projectPath": "D:\\MEGAsync\\UNAL\\11vo Semestre\\Arquitectura de Software\\WeStudy\\MS-Administration\\westudy_administration_webapi_csharp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\MEGAsync\\UNAL\\11vo Semestre\\Arquitectura de Software\\WeStudy\\westudy_administration_webapi_csharp\\westudy_administration_webapi_csharp\\obj\\",
+      "outputPath": "D:\\MEGAsync\\UNAL\\11vo Semestre\\Arquitectura de Software\\WeStudy\\MS-Administration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
