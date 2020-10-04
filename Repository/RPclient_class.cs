@@ -16,24 +16,24 @@ namespace westudy_administration_webapi_csharp.Repository
         };
         public static List<Course> _CourseList = new List<Course>()
         {
-            new Course() { Id = 1, Nombre = "Test101", Forum = "This is just a test"}
+            new Course() { id_course = 1, name = "Test101", forum = "This is just a test"}
         };
         public static List<User_Course> _UserCourseList = new List<User_Course>()
         {
-            new User_Course() {CourseId = 1, Estado = "Lo que sea", Id = 1, UserId = 1, Rol = "Admin"},
-            new User_Course() {CourseId = 1, Estado = "Hola", Id = 2, UserId = 2, Rol = "User"},
-            new User_Course() {CourseId = 1, Estado = "Lo que sea 2", Id = 3, UserId = 3, Rol = "Admin"}
+            new User_Course() {id_course = 1, state = "Lo que sea", id_user_course = 1, id_user = 1, rol = "Admin"},
+            new User_Course() {id_course = 1, state = "Hola", id_user_course = 2, id_user = 2, rol = "User"},
+            new User_Course() {id_course = 1, state = "Lo que sea 2", id_user_course = 3, id_user = 3, rol = "Admin"}
         };
 
         public List<User_Course> ObtainAdmins(int CId)
         {
-            List<User_Course> admins = _UserCourseList.Where(usr => ((usr.CourseId == CId) && (usr.Rol.Equals("Admin")))).ToList();
+            List<User_Course> admins = _UserCourseList.Where(usr => ((usr.id_course == CId) && (usr.rol.Equals("Admin")))).ToList();
             return admins;
         }
         public void UpdateUser(int UId, int CId, String rol)
         {
-            var user = _UserCourseList.First(i => (i.UserId == UId) && (i.CourseId == CId));
-            _UserCourseList.Find(u => u.Id == user.Id).Rol = rol;
+            var user = _UserCourseList.First(i => (i.id_user == UId) && (i.id_course == CId));
+            _UserCourseList.Find(u => u.id_user_course == user.id_user_course).rol = rol;
         }
         public void Add(User newUser)
         {

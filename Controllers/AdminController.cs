@@ -20,19 +20,23 @@ namespace westudy_administration_webapi_csharp.Controllers
             this.context = context;
         }
         // GET api/values
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("courses")]
+        public IActionResult GetCourses()
         {
-            return Ok(context.Users.ToList());
+            return Ok(context.course.ToList());
+        }
+
+        [HttpGet("usercourses")]
+        public IActionResult GetUserCourses()
+        {
+            return Ok(context.user_course.ToList());
         }
 
         // GET api/values/5
         [HttpGet("getall/{id}")]
         public IActionResult Get(int id)
         {
-            RPclient_class rpUC = new RPclient_class();
-
-            var ucRet = rpUC.ObtainAdmins(id);
+            var ucRet = context.ObtainAdmins(id);
 
             if (ucRet.Count == 0)
             {                
@@ -44,13 +48,12 @@ namespace westudy_administration_webapi_csharp.Controllers
         }
 
         // PUT api/values
-        [HttpPut("add")]
+        [HttpPut("setadmin")]
         public IActionResult addAdmin([FromBody] User_Course UCReg)
         {
-            if (!UCReg.Rol.Equals("Admin"))
-            {
-                RPclient_class rpUC = new RPclient_class();
-                rpUC.UpdateUser(UCReg.UserId, UCReg.CourseId, "Admin");
+            if (!UCReg.rol.Equals("Admin"))
+            {           
+                context.UpdateUser(UCReg.id_user, UCReg.id_course, "Admin");
                 return Ok("Usuario actualizado: Ahora es admin");
             } else
             {
@@ -69,10 +72,9 @@ namespace westudy_administration_webapi_csharp.Controllers
         [HttpPut("remove")]
         public IActionResult removeAdmin([FromBody] User_Course UCReg)
         {
-            if (!UCReg.Rol.Equals("User"))
+            if (!UCReg.rol.Equals("User"))
             {
-                RPclient_class rpUC = new RPclient_class();
-                rpUC.UpdateUser(UCReg.UserId, UCReg.CourseId, "User");
+                context.UpdateUser(UCReg.id_user, UCReg.id_course, "User");
                 return Ok("Usuario actualizado: Ahora es User");
             }
             else
@@ -81,10 +83,9 @@ namespace westudy_administration_webapi_csharp.Controllers
             }
         }
         [HttpPost("addnew")]
-        public IActionResult AddUser(User nUser)
+        public IActionResult AddUser(User_Course nUser)
         {
-            RPclient_class rpUC = new RPclient_class();
-            rpUC.Add(nUser);
+            context.AddUserCourse(nUser);
             return CreatedAtAction(nameof(AddUser), nUser);
         }
     }
