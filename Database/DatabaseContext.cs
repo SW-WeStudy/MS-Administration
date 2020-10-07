@@ -27,14 +27,16 @@ namespace westudy_administration_webapi_csharp.Database
             List<User_Course> admins = user_course.Where(usr => ((usr.id_course == CId) && (usr.rol.Equals("Admin")))).ToList();
             return admins;
         }
-        public void UpdateUser(int UId, int CId, String rol)
+        public void UpdateUser(String UId, int CId, String rol)
         {
-            var user = user_course.First(i => (i.id_user == UId) && (i.id_course == CId));
+            var user = user_course.First(i => (i.id_user.Equals(UId)) && (i.id_course == CId));
             user_course.Single(usr => usr.id_user_course == user.id_user_course).rol = rol;
+            SaveChanges();
         }
         public void AddUserCourse(User_Course newUser)
         {
             user_course.Add(newUser);
+            SaveChanges();
         }
     }
 }

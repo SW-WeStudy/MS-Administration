@@ -10,7 +10,7 @@ namespace westudy_administration_webapi_csharp.Database.Entities
     {
         [Key]
         public int id_user_course { get; set; }
-        public int id_user { get; set; }
+        public string id_user { get; set; }
         public int id_course { get; set; }
         public string rol { get; set; }
         public string state { get; set; }

@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using westudy_administration_webapi_csharp.Database;
 using westudy_administration_webapi_csharp.Database.Entities;
-using westudy_administration_webapi_csharp.Repository;
 
 namespace westudy_administration_webapi_csharp.Controllers
 {
@@ -32,7 +31,7 @@ namespace westudy_administration_webapi_csharp.Controllers
             return Ok(context.user_course.ToList());
         }
 
-        // GET api/values/5
+        // GET admins of especified course id
         [HttpGet("getall/{id}")]
         public IActionResult Get(int id)
         {
@@ -61,12 +60,12 @@ namespace westudy_administration_webapi_csharp.Controllers
             }
                 
         }
-
+    /*
         // PUT api/values/5
         [HttpPut("add/{id}")]
         public void Put(int id, [FromBody] string value)
         {
-        }
+        } */
 
         // DELETE api/values/5
         [HttpPut("remove")]
