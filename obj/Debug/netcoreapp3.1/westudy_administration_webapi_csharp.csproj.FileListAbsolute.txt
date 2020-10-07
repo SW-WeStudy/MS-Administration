@@ -59,3 +59,8 @@
 /home/jujpenabe/Documentos/MSArchitecture/MS-Administration/bin/Debug/netcoreapp3.1/out/westudy_administration_webapi_csharp.deps.json
 /home/jujpenabe/Documentos/MSArchitecture/MS-Administration/bin/Debug/netcoreapp3.1/out/westudy_administration_webapi_csharp.runtimeconfig.json
 /home/jujpenabe/Documentos/MSArchitecture/MS-Administration/bin/Debug/netcoreapp3.1/MySqlConnector.dll
+/home/jujpenabe/Documentos/MSArchitecture/MS-Administration/bin/Debug/netcoreapp3.1/out/out/web.config
+/home/jujpenabe/Documentos/MSArchitecture/MS-Administration/bin/Debug/netcoreapp3.1/out/out/appsettings.Development.json
+/home/jujpenabe/Documentos/MSArchitecture/MS-Administration/bin/Debug/netcoreapp3.1/out/out/appsettings.json
+/home/jujpenabe/Documentos/MSArchitecture/MS-Administration/bin/Debug/netcoreapp3.1/out/out/westudy_administration_webapi_csharp.deps.json
+/home/jujpenabe/Documentos/MSArchitecture/MS-Administration/bin/Debug/netcoreapp3.1/out/out/westudy_administration_webapi_csharp.runtimeconfig.json
