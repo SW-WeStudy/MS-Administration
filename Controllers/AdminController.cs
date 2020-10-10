@@ -38,7 +38,7 @@ namespace westudy_administration_webapi_csharp.Controllers
             var ucRet = context.ObtainAdmins(id);
 
             if (ucRet.Count == 0)
-            {                
+            {
                 var nf = NotFound("No hay usuarios admin o el curso no existe.");
                 return nf;
             }
@@ -47,18 +47,18 @@ namespace westudy_administration_webapi_csharp.Controllers
         }
 
         // PUT api/values
-        [HttpPut("setadmin")]
+        [HttpPut("set")]
         public IActionResult addAdmin([FromBody] User_Course UCReg)
         {
             if (!UCReg.rol.Equals("Admin"))
-            {           
+            {
                 context.UpdateUser(UCReg.id_user, UCReg.id_course, "Admin");
                 return Ok("Usuario actualizado: Ahora es admin");
             } else
             {
                 return Conflict("El usuario ya es un Admin del Curso");
             }
-                
+
         }
     /*
         // PUT api/values/5
@@ -81,7 +81,7 @@ namespace westudy_administration_webapi_csharp.Controllers
                 return Conflict("Usuario ya es un User");
             }
         }
-        [HttpPost("addnew")]
+        [HttpPost("add")]
         public IActionResult AddUser(User_Course nUser)
         {
             context.AddUserCourse(nUser);

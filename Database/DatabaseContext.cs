@@ -29,7 +29,7 @@ namespace westudy_administration_webapi_csharp.Database
         }
         public void UpdateUser(String UId, int CId, String rol)
         {
-            var user = user_course.First(i => (i.id_user.Equals(UId)) && (i.id_course == CId));
+            var user = user_course.First(i => ((i.id_course == CId) && (i.id_user.Equals(UId))));
             user_course.Single(usr => usr.id_user_course == user.id_user_course).rol = rol;
             SaveChanges();
         }
