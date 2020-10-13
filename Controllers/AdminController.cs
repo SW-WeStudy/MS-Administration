@@ -40,7 +40,7 @@ namespace westudy_administration_webapi_csharp.Controllers
             if (ucRet.Count == 0)
             {
                 var nf = NotFound("No hay usuarios admin o el curso no existe.");
-                return nf;
+                return  NotFound(nf);
             }
 
             return Ok(ucRet);
@@ -48,7 +48,7 @@ namespace westudy_administration_webapi_csharp.Controllers
 
         // PUT api/values
         [HttpPut("set")]
-        public IActionResult addAdmin([FromBody] User_Course UCReg)
+        public IActionResult AddAdmin([FromBody] User_Course UCReg)
         {
             if (!UCReg.rol.Equals("Admin"))
             {
@@ -69,7 +69,7 @@ namespace westudy_administration_webapi_csharp.Controllers
 
         // DELETE api/values/5
         [HttpPut("remove")]
-        public IActionResult removeAdmin([FromBody] User_Course UCReg)
+        public IActionResult RemoveAdmin([FromBody] User_Course UCReg)
         {
             if (!UCReg.rol.Equals("User"))
             {
